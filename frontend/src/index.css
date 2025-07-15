@@ -1,0 +1,50 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f3f4f6;
+}
+
+/* Floating animation for the widget */
+.floating {
+  animation: float 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+  perspective: 100px;
+}
+@keyframes float {
+  0% { 
+    transform: translateY(0px) rotate(0deg) rotateX(0deg);
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.08);
+  }
+  25% { 
+    transform: translateY(-8px) rotate(1deg) rotateX(1deg);
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.12);
+  }
+  50% { 
+    transform: translateY(-12px) rotate(2deg) rotateX(2deg);
+    box-shadow: 0 15px 20px 0 rgba(0,0,0,0.16);
+  }
+  75% { 
+    transform: translateY(-8px) rotate(1deg) rotateX(1deg);
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.12);
+  }
+  100% { 
+    transform: translateY(0px) rotate(0deg) rotateX(0deg);
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.08);
+  }
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #9ca3af;
+  margin: 0 2px;
+  animation: bounce 1s infinite;
+}
+.typing-indicator span:nth-child(2) { animation-delay: 0.25s }
+.typing-indicator span:nth-child(3) { animation-delay: 0.5s }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
